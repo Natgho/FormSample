@@ -21,8 +21,8 @@ from django.views.generic.base import RedirectView
 from form_api.views import ConsentViewSet, DetailedConsentViewSet
 
 router = routers.DefaultRouter()
-router.register('consents', ConsentViewSet)
-router.register('detailed_consents', DetailedConsentViewSet)
+router.register('consents', ConsentViewSet, basename="consents")
+router.register('detailed_consents', DetailedConsentViewSet, basename="detailed_consents")
 
 urlpatterns = [
     path('', RedirectView.as_view(url="/api/v1")),
