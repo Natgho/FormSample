@@ -20,3 +20,8 @@ class ConsentViewSet(viewsets.ModelViewSet):
         if resp.status_code == status.HTTP_201_CREATED:
             return self.list(request, *args, **kwargs)
         return resp
+
+
+class DetailedConsentViewSet(viewsets.ModelViewSet):
+    queryset = Consent.objects.all()
+    serializer_class = ConsentPostSerializer

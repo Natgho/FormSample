@@ -18,10 +18,11 @@ from django.urls import include, path
 from rest_framework import routers
 from django.views.generic.base import RedirectView
 
-from form_api.views import ConsentViewSet
+from form_api.views import ConsentViewSet, DetailedConsentViewSet
 
 router = routers.DefaultRouter()
 router.register('consents', ConsentViewSet)
+router.register('detailed_consents', DetailedConsentViewSet)
 
 urlpatterns = [
     path('', RedirectView.as_view(url="/api/v1")),
